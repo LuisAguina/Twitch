@@ -1,0 +1,88 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<!Doctypehtml>
+<html lang="es">
+<head>
+      
+  <div class="contact_form">
+    <meta charset="UTF-8">
+    <title>Comentarios</title>
+    <link rel="stylesheet" type="text/css" href="static/css/contacto.css">
+    </head>
+    <body>
+
+
+            <header>
+            <nav>
+            <ul>
+
+            </ul>
+            </nav>
+            </header>
+            <section class="main">
+                <section class="articles">
+                    <article>
+                     
+                        <form action="/agrega_documentos" method="post">
+                              <h1>comunidades</h1>
+                              <h3>En esta zona podras encontrar alguna persona con tus mismos gustos</h3>
+                      
+                      
+                                <form action="/agrega_contactos" method="post">       
+                      
+                                  
+                                      <p>
+                                        <label for="descripciondocumentos">Plataforma
+                                          <span class="obligatorio">*</span>
+                                        </label>
+                                          <input type="text" name="descripciondocumentos" id="descripciondocumentos" required="obligatorio" placeholder="Escribe la platoforma">
+                                      </p>
+                                    
+                                      <p>
+                                        <label for="juego">Juego
+                                          <span class="obligatorio">*</span>
+                                        </label>
+                                          <input type="text" name="juego" id="juego" required="obligatorio" placeholder="Escribe tu juego">
+                                      </p>
+                                  
+                                      <p>
+                                        <label for="usuario">usuario
+                                          <span class="obligatorio">*</span>
+                                        </label>
+                                          <input type="text" name="usuario" id="usuario" required="obligatorio" placeholder="Escribe tu usuario">
+                                      </p>    
+                                    
+                                     
+                                    
+                                      <p>
+                                        <label for="discord">Discord
+                                          <span class="obligatorio">*</span>
+                                        </label>
+                                          <input type="text" name="discord" id="discord" required="obligatorio" placeholder="Escribe tu discord">
+                                      </p>    
+                                    
+                                      <p>
+                                        <label for="tipo">Tipo de juego
+                                          <span class="obligatorio">*</span>
+                                        </label>
+                                          <input type="text" name="tipo" id="tipo" required="obligatorio" placeholder="Escribe tipo de juego">
+                                                      </p>                    
+                                                      <p>
+                                       <label for="horario">Horario
+                                           <span class="obligatorio">*</span>
+                                          </label>
+                                     <input type="time" name="horario" id="horario" required="obligatorio" placeholder="Escribe horario ">
+                                           </p>                    
+                                                        
+                                      <button type="submit" name="enviar_formulario" id="enviar"><p>Enviar</p></button>
+    </div>
+         
+          
+</form>
+
+
+                </aside>
+
+
+{%endblock%}

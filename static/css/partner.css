@@ -1,0 +1,643 @@
+:root {
+  --purple-1: #000000;
+  --purple-2: #000000;
+  --white: rgb(255, 255, 255);
+  --black: #221f1f;
+  --red: #edd418;
+  --lightgray: #cfcfcf;
+  --overlay: rgba(0, 0, 0, 0.5);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+
+html {
+  font-size: 62.5%;
+}
+body{
+
+  background-image:  url(https://i1.wp.com/www.senpai.com.mx/wp-content/uploads/2021/02/Overwatch-D.Va-cobra-vida-gracias-a-este-cosplay.jpg?fit=1280%2C720&ssl=1);
+  background-repeat: no-repeat;
+  
+  background-attachment: fixed;
+  background-size: cover;
+  color: #000000;
+}
+
+button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a,
+button {
+  color: inherit;
+}
+
+.no-transition {
+  transition: none !important;
+}
+
+body {
+  font: 1.6rem/1.5 Roboto, sans-serif;
+  color: var(--white);
+  min-height: 100vh;
+}
+
+
+/* HEADER
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.page-header {
+  position: relative;
+  padding: 1.5rem 3rem;
+  background: var(--purple-1);
+}
+
+.page-header nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.page-header .horizontal-logo,
+.page-header .search span {
+  display: none;
+}
+
+.page-header .vertical-logo {
+  max-width: 9.5rem;
+}
+
+.page-header .top-menu-wrapper {
+  color: var(--black);
+}
+
+.page-header .top-menu-wrapper::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  transition: background 0.5s;
+}
+
+.page-header .search {
+  color: var(--white);
+}
+
+.page-header .panel,
+.page-header .top-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 2;
+  transform: translate3d(-100%, 0, 0);
+  transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.page-header .panel1 {
+  width: 100%;
+  background: var(--purple-1);
+  transition-delay: 0.3s;
+}
+
+.page-header .panel2 {
+  width: calc(100% - 3rem);
+  background: var(--red);
+  transition-delay: 0.1s;
+}
+
+.page-header .top-menu {
+  display: flex;
+  flex-direction: column;
+  width: calc(100% - 6rem);
+  overflow-y: auto;
+  padding: 2rem;
+ background-image:  url(https://i1.wp.com/www.senpai.com.mx/wp-content/uploads/2021/02/Overwatch-D.Va-cobra-vida-gracias-a-este-cosplay.jpg?fit=1280%2C720&ssl=1);
+  background-repeat: no-repeat;
+}
+
+.page-header .top-menu-wrapper.show-offcanvas::before {
+  background: var(--overlay);
+  z-index: 1;
+}
+
+.page-header .top-menu-wrapper.show-offcanvas .panel,
+.page-header .top-menu-wrapper.show-offcanvas .top-menu {
+  transform: translate3d(0, 0, 0);
+  transition-duration: 0.7s;
+}
+
+.page-header .top-menu-wrapper.show-offcanvas .panel1 {
+  transition-delay: 0s;
+}
+
+.page-header .top-menu-wrapper.show-offcanvas .panel2 {
+  transition-delay: 0.2s;
+}
+
+.page-header .top-menu-wrapper.show-offcanvas .top-menu {
+  transition-delay: 0.4s;
+  box-shadow: rgba(0, 0, 0, 0.25) 0 0 4rem 0.5rem;
+}
+
+
+/* FORM
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.page-header .search-form {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  visibility: hidden;
+  opacity: 0;
+  padding: 1rem 0;
+  background: var(--purple-2);
+  transition: all 0.2s;
+}
+
+.page-header .search-form.is-visible {
+  visibility: visible;
+  opacity: 1;
+}
+
+.page-header .search-form div {
+  position: relative;
+  width: 90%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.page-header .search-form input {
+  width: 100%;
+  font-size: 2rem;
+  height: 4rem;
+  padding: 0 2rem;
+}
+
+.page-header .search-form button {
+  position: absolute;
+  right: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--purple-1);
+}
+
+
+/* TOP MENU
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.page-header .top-menu li + li {
+  margin-top: 1.5rem;
+}
+
+.page-header .top-menu > li:last-child {
+  margin-top: auto;
+}
+
+.page-header ul a {
+  display: inline-block;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  transition: color 0.35s ease-out;
+}
+
+.page-header ul a:hover {
+  color: var(--red);
+}
+
+.page-header .has-dropdown i {
+  display: none;
+}
+
+.page-header .sub-menu {
+  padding: 1.5rem 2rem 0;
+}
+
+.page-header .top-menu .mob-block {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 3rem;
+}
+
+.page-header .top-menu .mob-block i {
+  color: var(--lightgray);
+}
+
+.page-header .socials {
+  display: flex;
+  margin-top: 3rem;
+  /* some browsers ignore the padding-bottom: 2rem of the .top-menu because it has overflow-y:auto
+  https://bugzilla.mozilla.org/show_bug.cgi?id=748518
+  so we add a bottom margin to the .socials
+  */
+  margin-bottom: 1rem; 
+}
+
+.page-header .socials li + li {
+  margin-top: 0;
+}
+
+.page-header .socials .fa-stack {
+  font-size: 1.7rem;
+}
+
+.page-header .socials .fab {
+  font-size: 1.2rem;
+}
+
+
+/* FOOTER
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.page-footer {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  font-size: 1.3rem;
+  color: var(--black);
+}
+
+.page-footer span {
+  color: #e31b23;
+}
+
+
+/* MQ
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+@media screen and (min-width: 550px) {
+  .page-header .panel1 {
+    width: 60%;
+  }
+  .page-header .panel2 {
+    width: calc(60% - 3rem);
+  }
+  .page-header .top-menu {
+    width: calc(60% - 6rem);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .page-header .top-menu {
+    padding: 4rem;
+  }
+
+  .page-header ul a {
+    font-size: 1.6rem;
+  }
+
+  .page-header .search-form input {
+    font-size: 2.4rem;
+    height: 5rem;
+    line-height: 5rem;
+  }
+}
+
+@media screen and (min-width: 995px) {
+  .page-header {
+    padding: 0 3rem;
+  }
+
+  .page-header .panel,
+  .page-header .open-mobile-menu,
+  .page-header .vertical-logo,
+  .page-header .top-menu .mob-block,
+  .page-header .top-menu > li:last-child,
+  .page-header .top-menu-wrapper::before {
+    display: none;
+  }
+
+  .page-header .horizontal-logo {
+    display: block;
+  }
+
+  .page-header .top-menu-wrapper {
+    display: flex;
+    align-items: center;
+    color: var(--white);
+  }
+
+  .page-header .top-menu {
+    flex-direction: row;
+    position: static;
+    width: auto;
+    background: transparent;
+    transform: none;
+    padding: 0;
+    overflow-y: visible;
+    box-shadow: none !important;
+  }
+
+  .page-header .top-menu li + li {
+    margin-top: 0;
+  }
+
+  .page-header .top-menu > li:not(:nth-last-child(2)) {
+    margin-right: 3rem;
+  }
+
+  .page-header .top-menu > li > a {
+    padding: 3rem 0.5rem;
+  }
+
+  .page-header ul a {
+    font-size: 1.3rem;
+  }
+
+  .page-header .has-dropdown i {
+    display: inline-block;
+  }
+
+  .page-header .sub-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 1.5rem 2rem;
+    background: var(--purple-2);
+  }
+
+  .page-header .sub-menu li + li {
+    margin-top: 1.2rem;
+  }
+
+  .page-header .sub-menu a {
+    padding: 0.5rem 1rem;
+    white-space: nowrap;
+  }
+
+  .page-header .has-dropdown {
+    position: relative;
+  }
+
+  .page-header .has-dropdown:hover .sub-menu {
+    display: block;
+  }
+
+  .page-header .search {
+    display: flex;
+    align-items: center;
+    margin-left: 3rem;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .page-header .search {
+    margin-left: 5rem;
+  }
+
+  .page-header .search i {
+    margin-right: 1.5rem;
+  }
+
+  .page-header .search span {
+    display: block;
+    font-weight: 500;
+    font-size: 1.6rem;
+  }
+}
+/*compaltan*/
+
+
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a{
+  position: relative;
+  display: inline-block;
+  padding: 25px 30px;
+  margin: 40px 0;
+  color: #ec03f4;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: 0.5s;
+  letter-spacing: 4px;
+  overflow: hidden;
+  margin-right: 50px;
+ 
+}
+a:hover{
+  background: #f40303;
+  color: #050801;
+  box-shadow: 0 0 5px #f40303,
+              0 0 25px #f40303,
+              0 0 50px #f40303,
+              0 0 200px #f40303;
+   -webkit-box-reflect:below 1px linear-gradient(transparent, #0005);
+}
+a:nth-child(1){
+  filter: hue-rotate(270deg);
+}
+a:nth-child(2){
+  filter: hue-rotate(110deg);
+}
+a span{
+  position: absolute;
+  display: block;
+}
+a span:nth-child(1){
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg,transparent,#f40303);
+  animation: animate1 1s linear infinite;
+}
+@keyframes animate1{
+  0%{
+      left: -100%;
+  }
+  50%,100%{
+      left: 100%;
+  }
+}
+a span:nth-child(2){
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg,transparent,#f40303);
+  animation: animate2 1s linear infinite;
+  animation-delay: 0.25s;
+}
+@keyframes animate2{
+  0%{
+      top: -100%;
+  }
+  50%,100%{
+      top: 100%;
+  }
+}
+a span:nth-child(3){
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg,transparent,#f40303);
+  animation: animate3 1s linear infinite;
+  animation-delay: 0.50s;
+}
+@keyframes animate3{
+  0%{
+      right: -100%;
+  }
+  50%,100%{
+      right: 100%;
+  }
+}
+
+
+a span:nth-child(4){
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(360deg,transparent,#f40303);
+  animation: animate4 1s linear infinite;
+  animation-delay: 0.75s;
+}
+@keyframes animate4{
+  0%{
+      bottom: -100%;
+  }
+  50%,100%{
+      bottom: 100%;
+  }
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  line-height: 1.42em;
+  color:#A7A1AE;
+  background-color:#1F2739;
+}
+
+h1 {
+  font-size:3em; 
+  font-weight: 300;
+  line-height:1em;
+  text-align: center;
+  color: #ffffff;
+}
+
+h2 {
+  font-size:1em; 
+  font-weight: 300;
+  text-align: center;
+  display: block;
+  line-height:1em;
+  padding-bottom: 2em;
+  color: #d2c423;
+}
+
+h2 a {
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #d2c423;
+  text-decoration: none;
+}
+
+.blue { color: #ffffff; }
+.yellow { color: #d2c423; }
+
+.container th h1 {
+	  font-weight: bold;
+	  font-size: 1em;
+  text-align: left;
+  color: #ffffff;
+}
+
+.container td {
+	  font-weight: normal;
+	  font-size: 1em;
+  -webkit-box-shadow: 0 2px 2px -2px #35e2e2;
+	   -moz-box-shadow: 0 2px 2px -2px #0E1119;
+	        box-shadow: 0 2px 2px -2px #0E1119;
+}
+
+.container {
+	  text-align: left;
+	  overflow: hidden;
+	  width: 80%;
+	  margin: 0 auto;
+  display: table;
+  padding: 0 0 8em 0;
+}
+
+.container td, .container th {
+	  padding-bottom: 2%;
+	  padding-top: 2%;
+  padding-left:2%;  
+}
+
+/* Background-color of the odd rows */
+.container tr:nth-child(odd) {
+	  background-color: #323C50;
+}
+
+/* Background-color of the even rows */
+.container tr:nth-child(even) {
+	  background-color: #2C3446;
+}
+
+.container th {
+	  background-color: #1F2739;
+}
+
+.container td:first-child { color: #ffffff; }
+
+.container tr:hover {
+   background-color: #464A52;
+-webkit-box-shadow: 0 6px 6px -6px #0E1119;
+	   -moz-box-shadow: 0 6px 6px -6px #0E1119;
+	        box-shadow: 0 6px 6px -6px #0E1119;
+}
+
+.container td:hover {
+  background-color: #5b09f2;
+  color: #000000;
+  font-weight: bold;
+  
+  box-shadow: #000000 -1px 1px, #b3b024 -2px 2px, #d2c423 -3px 3px, #d2c423 -4px 4px, #d2c423 -5px 5px, #d2c423 -6px 6px;
+  transform: translate3d(6px, -6px, 0);
+  
+  transition-delay: 0s;
+	  transition-duration: 0.4s;
+	  transition-property: all;
+  transition-timing-function: line;
+}
+
+@media{
+.container td:nth-child(4),
+.container th:nth-child(4) { display: none; }
+}

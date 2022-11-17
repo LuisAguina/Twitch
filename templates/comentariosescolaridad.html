@@ -1,0 +1,82 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<!Doctypehtml>
+<html lang="es">
+<head>
+  <div class="contact_form">
+    <meta charset="UTF-8">
+    <title>Comentarios</title>
+    <link rel="stylesheet" type="text/css" href="static/css/contacto.css">
+    </head>
+    <body>
+
+
+            <header>
+            <nav>
+            <ul>
+
+            </ul>
+            </nav>
+            </header>
+            <section class="main">
+                <section class="articles">
+                    <article>
+                     
+                        <form action="/agrega_escolaridad" method="post">
+                              <h1>PARTNER</h1>
+                              <h3>Debes cumplir requisistos antes de querer adquirir el partner</h3>
+                      
+                      
+                                <form action="/agrega_contactos" method="post">       
+                      
+                                  
+                                      <p>
+                                        <label for="descripcionescolaridad">Nombre del partner
+                                          <span class="obligatorio">*</span>
+                                        </label>
+                                          <input type="text" name="descripcionescolaridad" id="descripcionescolaridad" required="obligatorio" placeholder="Escribe el Nombre">
+                                      </p>
+                                    
+                                      <p>
+                                        <label for="edad">Edad
+                                          <span class="obligatorio">*</span>
+                                        </label>
+                                          <input type="text" name="edad" id="edad" required="obligatorio" placeholder="Escribe tu edad">
+                                      </p>
+                                  
+                                      <p>
+                                        <label for="genero">genero de videojuego
+                                          <span class="obligatorio">*</span>
+                                        </label>
+                                          <input type="text" name="genero" id="genero" required="obligatorio" placeholder="Escribe el genero">
+                                      </p>    
+                                    
+                                     
+                                    
+                                      <p>
+                                        <label for="correo">correo
+                                          <span class="obligatorio">*</span>
+                                        </label>
+                                          <input type="text" name="correo" id="correo¨ required="obligatorio" placeholder="Escribe el correo">
+                                      </p>    
+                                    
+                                      <p>
+                                        <label for="fecha">Fecha
+                                          <span class="obligatorio">*</span>
+                                        </label>
+                                          <input type="date" name="fecha" id="fecha" required="obligatorio" placeholder="Escribe la fecha">
+                                                      </p>                    
+                                    
+                                      <button type="submit" name="enviar_formulario" id="enviar"><p>Enviar</p></button>
+    </div>
+      
+          
+</form>
+
+
+                </aside>
+
+
+{%endblock%}
+

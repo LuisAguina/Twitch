@@ -1,0 +1,92 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<html lang="es">
+<head>
+     
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+  <link rel="stylesheet" type="text/css" href="/static/css/OW.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+
+  
+<center><i class="fa -formulario" id="formulario">   
+  <meta charset="UTF-8">
+  <title>Formulario de contacto</title>
+
+
+  <link rel="stylesheet" type="text/css" href="static/css/contacto.css">
+  </head>
+
+
+<body>  
+  
+ 
+
+  <div class="contact_form">
+
+    <div class="formulario">      
+      <h1>contactanos</h1>
+        <h3>Escríbenos y en breve los pondremos en contacto contigo</h3>
+
+
+          <form action="/agrega_contactos" method="post">       
+
+            
+                <p>
+                  <label for="usuario" class="colocar_nombre">usuario
+                    <span class="obligatorio">*</span>
+                  </label>
+                    <input type="text" name="introducir_nombre" id="nombre" required="obligatorio" placeholder="Escribe tu usuario">
+                </p>
+              
+                <p>
+                  <label for="correo" class="colocar_email">Email
+                    <span class="obligatorio">*</span>
+                  </label>
+                    <input type="correo" name="introducir_email" id="email" required="obligatorio" placeholder="Escribe tu Email">
+                </p>
+            
+                <p>
+                  <label for="telefono" class="colocar_telefono">Teléfono
+                  </label>
+                    <input type="telefono" name="introducir_telefono" id="telefono" placeholder="Escribe tu teléfono">
+                </p>    
+              
+               
+              
+                <p>
+                  <label for="asunto" class="colocar_asunto">Asunto
+                    <span class="obligatorio">*</span>
+                  </label>
+                    <input type="text" name="introducir_asunto" id="asunto" required="obligatorio" placeholder="Escribe un asunto">
+                </p>    
+              
+                <p>
+                  <label for="Comentarios" class="colocar_mensaje">Comentarios
+                    <span class="obligatorio">*</span>
+                  </label>                     
+                                    <textarea name="introducir_mensaje" class="texto_mensaje" id="mensaje" required="obligatorio" placeholder="Deja aquí tu comentario..."></textarea> 
+                                </p>                    
+              
+                <button type="submit" name="enviar_formulario" id="enviar"><p>Enviar</p></button>
+
+                <p class="aviso">
+                  <span class="obligatorio"> * </span>los campos son obligatorios.
+                </p>          
+            
+          </form></center>
+    </div>  
+  </div>
+
+</body>
+</html>
+
+{%endblock%}
+</body>
+</html>
